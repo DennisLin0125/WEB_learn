@@ -1,0 +1,54 @@
+.headline {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.desktop-munu {
+    text-align: center;
+    display: block;
+}
+
+.mobile-menu {
+    text-align: center;
+    display: none;
+}
+
+.list {
+    display: flex;
+    justify-content: center
+}
+
+.product { 
+    flex: none;
+    width: 280px;
+    margin: 10px;   /* ( 280 + 10 + 10 ) * 4 = 1200px */
+    background-color: #ffcccc;
+}
+
+@media screen and (max-width: 1198px) { 
+    .list {
+        flex-wrap: wrap;  /*允許元件往下掉*/
+    }
+    .product {
+        width: 45%;  /* 45% + 45% = 90% 所以一排只能2個*/
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    .headline {
+        font-size: 20px;
+    }
+
+    .desktop-munu {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+
+    .product {
+        width: 90%;  /* 90% 所以一排只能1個*/
+    }
+}
