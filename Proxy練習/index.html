@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy</title>
+</head>
+<body>
+    <script>
+        let data = {
+            price: 100,
+            count: 5
+        }
+
+        let proxy = new Proxy (data, {
+            get:function(target, property){
+                if (property === 'total') {
+                    return target.price * target.count;
+                } else {
+                    return target['price'];
+                }
+            }
+        });
+
+        // 呼叫get
+        console.log("總價:",proxy.total);
+        console.log("單價:",proxy.price);
+    </script>
+</body>
+</html>
